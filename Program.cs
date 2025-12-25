@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // 1. Veritabanı Bağlantısı (SQL Server için)
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // 2. MVC servislerini ekle
 builder.Services.AddControllersWithViews();
